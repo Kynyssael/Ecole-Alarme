@@ -15,7 +15,7 @@ class Alarme:
         self.verte = LED("verte", 25)
         self.buzzer = Buzzer("buzzer_main", 24)
 
-        self.button_armement = Button("armement", 17, "up")
+        self.button_armement = Button("armement", 17, "down")
         self.button_desarmement = Button("desarmement", 27, "up")
         self.motion = Motion("Motion_1", 22)
 
@@ -43,7 +43,7 @@ class Alarme:
         self.rouge.led_flash()
 
     def check_input_armer(self):
-        if not self.button_armement.detection():
+        if self.button_armement.detection():
             return 1
         else:
             return 0

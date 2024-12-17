@@ -1,9 +1,12 @@
 from LED import LED
+from Keypad import Keypad
 from Buzzer import Buzzer
 from Button import Button
 from Motion import Motion
+from Password import Password
 from State import State
 
+import RPi.GPIO as GPIO
 import time
 
 class Alarme:
@@ -14,26 +17,30 @@ class Alarme:
         self.rouge = LED("rouge", 18)
         self.verte = LED("verte", 25)
         self.buzzer = Buzzer("buzzer_main", 24)
+        self.keypad = Keypad(21, 20, 16, 26, 19, 13, 6, 5, "Keypad")
+        self.password = Password()
 
         self.button_armement = Button("armement", 17, "down")
         self.button_desarmement = Button("desarmement", 27, "up")
         self.motion = Motion("Motion_1", 22)
 
-    def desarmement(self):
-        self.verte.led_on()
-        self.rouge.led_off()
-        self.buzzer.buzzer_off()
+    def desarmement(self, state):
+        if  state == State.INIT or self.password.input_password(self.keypad, self.buzzer):
+            self.verte.led_on()
+            self.rouge.led_off()
+            self.buzzer.buzzer_off()
 
-        self.state = State.DESARMER
+            self.state = State.DESARMER
 
     def armement(self):
-        self.verte.led_off()
-        self.rouge.led_on()
-        self.buzzer.buzzer_off()
+        if self.password.input_password(self.keypad, self.buzzer):
+            self.verte.led_off()
+            self.rouge.led_on()
+            self.buzzer.buzzer_off()
 
-        time.sleep(5)
+            time.sleep(5)
 
-        self.state = State.ARMER
+            self.state = State.ARMER
 
     def alarme(self):
         self.buzzer.buzzer_on()
@@ -69,3 +76,4 @@ class Alarme:
         print(self.verte)
         print(self.rouge)
         print(self.buzzer)
+        return "Done"

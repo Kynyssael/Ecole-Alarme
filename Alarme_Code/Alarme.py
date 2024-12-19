@@ -5,6 +5,7 @@ from Button import Button
 from Motion import Motion
 from Password import Password
 from State import State
+from SMTP import SMTP
 
 import RPi.GPIO as GPIO
 import time
@@ -44,10 +45,20 @@ class Alarme:
 
     def alarme(self):
         self.buzzer.buzzer_on()
+        self.alarme_email()
         self.state = State.ALARME
 
     def alarme_led(self):
         self.rouge.led_flash()
+
+    def alarme_email(self):
+        self.email = SMTP()
+        self.email.identify()
+        self.email.secure()
+        self.email.login()
+        self.email.send_email()
+        self.email.end_session
+        del self.email
 
     def check_input_armer(self):
         if self.button_armement.detection():

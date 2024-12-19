@@ -1,4 +1,3 @@
-import inputimeout
 from Keypad import Keypad
 from Buzzer import Buzzer
 

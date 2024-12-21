@@ -1,6 +1,7 @@
 #Classe LED, Permet de configuer les LED et de les alumer et eteindre.
 import RPi.GPIO as GPIO
 import time
+import logging
 
 class LED:
     def __init__(self, name, pin):

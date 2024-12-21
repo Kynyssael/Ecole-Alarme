@@ -1,0 +1,42 @@
+2024-12-21 10:56:49,630 - INFO - Application en cour d'initialisation.
+2024-12-21 10:56:49,631 - DEBUG - Led rouge est activer en sortie sur la pin 18
+2024-12-21 10:56:49,631 - DEBUG - Led verte est activer en sortie sur la pin 25
+2024-12-21 10:56:49,631 - DEBUG - Le buzzer_main est activer en sortie sur la pin 24
+2024-12-21 10:56:49,633 - DEBUG - Keypad Initialiser
+2024-12-21 10:56:49,633 - DEBUG - Objet Password Initialiser
+2024-12-21 10:56:49,633 - DEBUG - Button armement est configurer en pull-down sur la pin 17
+2024-12-21 10:56:49,634 - DEBUG - Button desarmement est configurer en pull-up sur la pin 27
+2024-12-21 10:56:49,634 - DEBUG - Le Motion1 est configurer en entrer sur la pin 22
+2024-12-21 10:56:49,634 - INFO - Initialisation des composanted completer
+2024-12-21 10:56:49,634 - INFO - En cour de desarmement
+2024-12-21 10:56:49,634 - DEBUG - Etat de la LED verte: On
+2024-12-21 10:56:49,634 - DEBUG - Etat de la LED rouge: Off
+2024-12-21 10:56:49,634 - DEBUG - Etat du buzzer buzzer_main: Off
+2024-12-21 10:56:49,634 - INFO - Systeme desarmer
+2024-12-21 10:57:16,748 - INFO - En cour de Armement
+2024-12-21 10:57:16,749 - DEBUG - Etat de la LED verte: Off
+2024-12-21 10:57:16,749 - DEBUG - Etat de la LED rouge: On
+2024-12-21 10:57:16,749 - DEBUG - Etat du buzzer buzzer_main: Off
+2024-12-21 10:57:16,749 - INFO - Delai d'armement en cour
+2024-12-21 10:57:21,749 - INFO - Delai completer.
+2024-12-21 10:57:21,749 - INFO - Systeme Armer
+2024-12-21 10:57:28,760 - INFO - Mouvement detecter
+2024-12-21 10:57:28,760 - DEBUG - Etat du buzzer buzzer_main: On
+2024-12-21 10:57:28,760 - INFO - Initialisation de l'envois de courriel
+2024-12-21 10:57:28,760 - DEBUG - Initialisation de l'objet SMTP
+2024-12-21 10:57:28,903 - DEBUG - Initialisation completer.
+2024-12-21 10:57:28,903 - DEBUG - Envoie de la commende ehlo au server
+2024-12-21 10:57:28,965 - DEBUG - Initialisation du TLS
+2024-12-21 10:57:29,042 - DEBUG - TLS completer
+2024-12-21 10:57:29,043 - DEBUG - Logging au serveur
+2024-12-21 10:57:29,235 - DEBUG - Login completer avec succes
+2024-12-21 10:57:29,235 - DEBUG - envoie du courriel
+2024-12-21 10:57:29,903 - DEBUG - Courriel envoyer
+2024-12-21 10:57:29,904 - DEBUG - Fin de la session SMTP
+2024-12-21 10:57:29,904 - INFO - Finalisation de l'envois de courriel.
+2024-12-21 10:57:29,904 - INFO - En alarme!
+2024-12-21 10:57:37,412 - INFO - En cour de desarmement
+2024-12-21 10:57:37,413 - DEBUG - Etat de la LED verte: On
+2024-12-21 10:57:37,413 - DEBUG - Etat de la LED rouge: Off
+2024-12-21 10:57:37,413 - DEBUG - Etat du buzzer buzzer_main: Off
+2024-12-21 10:57:37,413 - INFO - Systeme desarmer

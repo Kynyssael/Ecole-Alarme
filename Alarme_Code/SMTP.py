@@ -1,27 +1,27 @@
 import smtplib
-import datetime;
+import datetime
+from dotenv import load_dotenv
+import os
 
 class SMTP:
 
     def __init__(self):
-        print("INIT")
         self.smtpObj = smtplib.SMTP("smtp.gmail.com", 587)
-        print("INIT DONE")
+        load_dotenv()
+        print(os.getenv("SMTP_DEFAULT_EMAIL"))
 
     def identify(self):
         self.smtpObj.ehlo()
     
     def secure(self):
-        print("Secure")
         self.smtpObj.starttls()
 
     def login(self):
-        print("Login")
-        self.smtpObj.login("drecz30@gmail.com", "fzgt hksh irkx fcdd")
+        self.smtpObj.login(os.getenv("SMTP_DEFAULT_EMAIL"), os.getenv("SMTP_DEFAULT_PASS"))
 
     def send_email(self):
-        from_address = "drecz30@gmail.com"
-        to_address = "drecz30@gmail.com"
+        from_address = os.getenv("SMTP_DEFAULT_EMAIL")
+        to_address = os.getenv("SMTP_DEFAULT_EMAIL")
         message = f"""\
         Subject: Alerte detecte
         To:{to_address}

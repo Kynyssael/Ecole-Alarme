@@ -1,6 +1,7 @@
 #Classe Buzzer, Permet de configuer les Buzzer et de les alumer et eteindre.
 import RPi.GPIO as GPIO
 import time
+import logging
 
 class Buzzer:
     def __init__(self, name, pin):
